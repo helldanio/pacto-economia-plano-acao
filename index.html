@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pacto pela Economia - São José do Piauí</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Configuração do Tailwind -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        gov: {
+                            light: '#e6f4ea',
+                            primary: '#059669', // Emerald 600
+                            dark: '#064e3b', // Emerald 900
+                            accent: '#fbbf24', // Amber 400
+                            alert: '#ef4444', // Red 500
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Animações de Fade In no Scroll */
+        .fade-up {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        .fade-up.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* Estilo customizado para a linha do tempo */
+        .timeline-line {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 4px;
+            height: 100%;
+            background-color: #059669;
+            z-index: 0;
+        }
+        @media (max-width: 768px) {
+            .timeline-line {
+                left: 16px;
+                transform: none;
+            }
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans antialiased overflow-x-hidden">
+
+    <!-- HERO SECTION -->
+    <header class="relative min-h-screen flex items-center justify-center overflow-hidden bg-gov-dark text-white">
+        <!-- Background Pattern (Abstract) -->
+        <div class="absolute inset-0 opacity-10">
+            <svg class="h-full w-full" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+                        <path d="M 40 0 L 0 0 0 40" fill="none" stroke="currentColor" stroke-width="1"/>
+                    </pattern>
+                </defs>
+                <rect width="100%" height="100%" fill="url(#grid)" />
+            </svg>
+        </div>
+        
+        <div class="relative z-10 container mx-auto px-6 text-center fade-up">
+            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 border border-white/20 mb-8 backdrop-blur-sm">
+                <i class="fa-solid fa-chart-line text-gov-accent"></i>
+                <span class="text-sm font-semibold tracking-wider uppercase">Proposta de Intervenção Estratégica</span>
+            </div>
+            <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight mb-6 leading-tight">
+                PACTO PELA <span class="text-gov-accent">ECONOMIA</span>
+            </h1>
+            <h2 class="text-2xl md:text-3xl font-light text-slate-300 mb-10">
+                São José do Piauí
+            </h2>
+            <p class="max-w-2xl mx-auto text-lg md:text-xl text-slate-400 mb-12">
+                Um plano de ação embasado em dados reais para reverter a vulnerabilidade, aplicar inovação tecnológica e dobrar a produção da agricultura familiar.
+            </p>
+            <a href="#diagnostico" class="inline-flex items-center gap-2 bg-gov-primary hover:bg-emerald-500 text-white font-bold py-4 px-8 rounded-full transition-all hover:scale-105 shadow-lg shadow-emerald-900/50">
+                Ver o Diagnóstico
+                <i class="fa-solid fa-arrow-down animate-bounce"></i>
+            </a>
+        </div>
+    </header>
+
+    <!-- SÍNTESE DO PROBLEMA -->
+    <section id="diagnostico" class="py-24 bg-white relative">
+        <div class="container mx-auto px-6">
+            <div class="text-center max-w-3xl mx-auto mb-16 fade-up">
+                <h3 class="text-gov-primary font-bold tracking-wider uppercase mb-2">Síntese do Problema</h3>
+                <h2 class="text-4xl font-bold mb-6 text-slate-900">A Realidade no Campo</h2>
+                <p class="text-lg text-slate-600">
+                    Análise baseada em dados de <strong>141 produtores rurais</strong> cadastrados até 17/07/2026. Identificamos padrões críticos que exigem ação imediata do poder público.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Card 1 -->
+                <div class="bg-slate-50 p-8 rounded-3xl border border-slate-100 shadow-xl shadow-slate-200/50 fade-up hover:-translate-y-2 transition-transform duration-300">
+                    <div class="w-14 h-14 bg-indigo-100 text-indigo-600 rounded-2xl flex items-center justify-center text-2xl mb-6">
+                        <i class="fa-solid fa-leaf"></i>
+                    </div>
+                    <h4 class="text-xl font-bold mb-4">Predominância e Gênero</h4>
+                    <p class="text-slate-600 mb-4 text-sm leading-relaxed">
+                        A <strong class="text-slate-900">mandioca lidera com 70 produtores</strong> (quase 50%). É também a cultura com maior inclusão feminina: <strong class="text-indigo-600">30 produtoras (42,8%)</strong>.
+                    </p>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        Em contraste, mel (25H/2M) e caju (10H/1M) são amplamente dominados por homens. Existem 33 produtores focados em outras culturas, mostrando potencial para diversificação.
+                    </p>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="bg-red-50 p-8 rounded-3xl border border-red-100 shadow-xl shadow-red-100/50 fade-up hover:-translate-y-2 transition-transform duration-300 delay-100">
+                    <div class="w-14 h-14 bg-red-100 text-red-600 rounded-2xl flex items-center justify-center text-2xl mb-6">
+                        <i class="fa-solid fa-triangle-exclamation"></i>
+                    </div>
+                    <h4 class="text-xl font-bold mb-4 text-red-900">Vulnerabilidade e Gargalo</h4>
+                    <ul class="space-y-4">
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-xmark text-red-500 mt-1"></i>
+                            <span class="text-sm text-red-800"><strong>Alta vulnerabilidade:</strong> 70,2% (99 pessoas) operam na subsistência, com renda de até 1 salário mínimo.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-xmark text-red-500 mt-1"></i>
+                            <span class="text-sm text-red-800"><strong>Desamparo técnico:</strong> Impressionantes 81,6% (115 pessoas) <strong>não recebem</strong> assistência técnica. No caju, 100% estão desamparados. Na apicultura, apenas 3 de 27 têm apoio.</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="bg-amber-50 p-8 rounded-3xl border border-amber-100 shadow-xl shadow-amber-100/50 fade-up hover:-translate-y-2 transition-transform duration-300 delay-200">
+                    <div class="w-14 h-14 bg-amber-100 text-amber-600 rounded-2xl flex items-center justify-center text-2xl mb-6">
+                        <i class="fa-solid fa-cloud-sun-rain"></i>
+                    </div>
+                    <h4 class="text-xl font-bold mb-4 text-amber-900">Obstáculos e Infraestrutura</h4>
+                    <ul class="space-y-3">
+                        <li class="flex items-center gap-3 text-sm text-amber-800">
+                            <i class="fa-solid fa-temperature-arrow-up w-5"></i>
+                            <span><strong>Clima:</strong> Fator mais unânime (134 menções).</span>
+                        </li>
+                        <li class="flex items-center gap-3 text-sm text-amber-800">
+                            <i class="fa-solid fa-tractor w-5"></i>
+                            <span><strong>Mecanização:</strong> Faltam equipamentos (114).</span>
+                        </li>
+                        <li class="flex items-center gap-3 text-sm text-amber-800">
+                            <i class="fa-solid fa-bug w-5"></i>
+                            <span><strong>Pragas:</strong> Limitador constante (108).</span>
+                        </li>
+                        <li class="flex items-center gap-3 text-sm text-amber-800">
+                            <i class="fa-solid fa-money-bill-trend-up w-5"></i>
+                            <span><strong>Mercado:</strong> Preços desfavoráveis (109).</span>
+                        </li>
+                    </ul>
+                    <div class="mt-4 pt-4 border-t border-amber-200">
+                        <p class="text-sm text-amber-900 font-semibold"><i class="fa-solid fa-check text-green-600 mr-1"></i> Ponto Forte: Segurança Jurídica</p>
+                        <p class="text-xs text-amber-800 mt-1">54,6% possuem terra própria e 21,3% têm posse, viabilizando investimentos futuros.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TABELA RESUMO -->
+    <section class="py-12 bg-slate-900 text-white">
+        <div class="container mx-auto px-6 max-w-5xl fade-up">
+            <h3 class="text-2xl font-bold mb-8 text-center text-slate-100 border-b border-slate-700 pb-4">Diagnóstico Resumido (Base: 141 Produtores)</h3>
+            
+            <div class="overflow-x-auto rounded-xl border border-slate-700 shadow-2xl">
+                <table class="w-full text-left border-collapse">
+                    <tbody>
+                        <tr class="border-b border-slate-700 hover:bg-slate-800 transition-colors">
+                            <th class="p-5 font-semibold text-gov-accent bg-slate-800/50 w-1/3">Foco Principal Produtivo</th>
+                            <td class="p-5 text-slate-300">Mandioca (70 produtores), Mel (27 produtores) e Caju (11 produtores).</td>
+                        </tr>
+                        <tr class="border-b border-slate-700 hover:bg-slate-800 transition-colors">
+                            <th class="p-5 font-semibold text-gov-accent bg-slate-800/50">Vulnerabilidade Financeira</th>
+                            <td class="p-5 text-slate-300"><strong class="text-red-400">70,2% (99 produtores)</strong> possuem renda de até 1 salário mínimo.</td>
+                        </tr>
+                        <tr class="border-b border-slate-700 hover:bg-slate-800 transition-colors">
+                            <th class="p-5 font-semibold text-gov-accent bg-slate-800/50">Déficit de Apoio Técnico</th>
+                            <td class="p-5 text-slate-300"><strong class="text-red-400">81,6% (115 produtores)</strong> não recebem assistência técnica (100% no caju não recebem).</td>
+                        </tr>
+                        <tr class="border-b border-slate-700 hover:bg-slate-800 transition-colors">
+                            <th class="p-5 font-semibold text-gov-accent bg-slate-800/50">Gargalos Principais</th>
+                            <td class="p-5 text-slate-300">Clima (134 menções), falta de mecanização (114) e pragas (108).</td>
+                        </tr>
+                        <tr class="hover:bg-slate-800 transition-colors">
+                            <th class="p-5 font-semibold text-gov-accent bg-slate-800/50">Segurança Fundiária</th>
+                            <td class="p-5 text-slate-300"><strong class="text-green-400">54,6%</strong> possuem terra própria e <strong class="text-green-400">21,3%</strong> possuem posse, garantindo viabilidade jurídica para os investimentos.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- PLANO DE AÇÃO - PILARES -->
+    <section class="py-24 bg-gov-light">
+        <div class="container mx-auto px-6">
+            <div class="text-center max-w-4xl mx-auto mb-20 fade-up">
+                <h3 class="text-gov-primary font-bold tracking-wider uppercase mb-2">A Solução</h3>
+                <h2 class="text-4xl md:text-5xl font-extrabold mb-6 text-slate-900">Projeto <span class="text-gov-primary">Crescer São José</span></h2>
+                <p class="text-xl text-slate-600 bg-white inline-block px-6 py-2 rounded-full shadow-sm border border-emerald-100">
+                    Ciclo Estratégico de 24 Meses baseados em 4 Pilares Fundamentais
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-6xl mx-auto">
+                
+                <!-- Pilar 1 -->
+                <div class="bg-white rounded-3xl p-8 border border-slate-200 shadow-lg fade-up relative overflow-hidden group">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-blue-50 rounded-bl-full -z-10 transition-transform group-hover:scale-150"></div>
+                    <div class="flex items-center gap-4 mb-6">
+                        <div class="w-16 h-16 rounded-full bg-blue-600 text-white flex items-center justify-center text-2xl shadow-md shadow-blue-200">
+                            1
+                        </div>
+                        <h4 class="text-2xl font-bold text-slate-800">Segurança Hídrica e Convivência com o Semiárido</h4>
+                    </div>
+                    <p class="text-slate-600 mb-6 line-clamp-3 group-hover:line-clamp-none transition-all">Dado que poços artesianos são inviáveis devido à profundidade necessária, o foco será na retenção da água das chuvas.</p>
+                    
+                    <div class="bg-blue-50 p-4 rounded-xl border border-blue-100 mb-4">
+                        <h5 class="font-bold text-blue-900 mb-2"><i class="fa-solid fa-gears mr-2"></i> Ação Prática</h5>
+                        <p class="text-sm text-blue-800">Implementação imediata de tecnologias sociais: cisternas domiciliares, cisternas calçadão, cisternas escolares e barragens subterrâneas.</p>
+                    </div>
+                    <div class="bg-slate-50 p-4 rounded-xl border border-slate-200">
+                        <h5 class="font-bold text-slate-900 mb-2"><i class="fa-solid fa-briefcase mr-2"></i> Instrumento</h5>
+                        <p class="text-sm text-slate-700">Expansão do <strong>Programa Cisternas</strong> (Governo Federal) articulado com o Governo do Estado para garantir soberania hídrica e alimentar.</p>
+                    </div>
+                </div>
+
+                <!-- Pilar 2 -->
+                <div class="bg-white rounded-3xl p-8 border border-slate-200 shadow-lg fade-up relative overflow-hidden group delay-100">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-purple-50 rounded-bl-full -z-10 transition-transform group-hover:scale-150"></div>
+                    <div class="flex items-center gap-4 mb-6">
+                        <div class="w-16 h-16 rounded-full bg-purple-600 text-white flex items-center justify-center text-2xl shadow-md shadow-purple-200">
+                            2
+                        </div>
+                        <h4 class="text-2xl font-bold text-slate-800">Inovação Aberta para Mecanização e Controle</h4>
+                    </div>
+                    <p class="text-slate-600 mb-6">Para superar a falta de maquinário (114) e pragas (108), utilizaremos os novos marcos legais de inovação do Estado do Piauí.</p>
+                    
+                    <div class="bg-purple-50 p-4 rounded-xl border border-purple-100 mb-4">
+                        <h5 class="font-bold text-purple-900 mb-2"><i class="fa-solid fa-lightbulb mr-2"></i> Ação Prática</h5>
+                        <p class="text-sm text-purple-800">Lançamento de edital via <strong>Contrato Público de Solução Inovadora (CPSI - Lei Complementar nº 182/2021)</strong>.</p>
+                    </div>
+                    <div class="bg-slate-50 p-4 rounded-xl border border-slate-200">
+                        <h5 class="font-bold text-slate-900 mb-2"><i class="fa-solid fa-file-contract mr-2"></i> Instrumento</h5>
+                        <p class="text-sm text-slate-700">Elaboração de Estudo Técnico Preliminar (ETP) para testar <em>"Uber de tratores"</em> e armadilhas biológicas em ambiente real, pago a startups. Uso de PMI para atrair iniciativa privada.</p>
+                    </div>
+                </div>
+
+                <!-- Pilar 3 -->
+                <div class="bg-white rounded-3xl p-8 border border-slate-200 shadow-lg fade-up relative overflow-hidden group">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-green-50 rounded-bl-full -z-10 transition-transform group-hover:scale-150"></div>
+                    <div class="flex items-center gap-4 mb-6">
+                        <div class="w-16 h-16 rounded-full bg-green-600 text-white flex items-center justify-center text-2xl shadow-md shadow-green-200">
+                            3
+                        </div>
+                        <h4 class="text-2xl font-bold text-slate-800">Choque de Assistência Técnica (Dobrar Produção)</h4>
+                    </div>
+                    <p class="text-slate-600 mb-6">Manejo correto do solo e da planta para saltar o rendimento da mandioca de <strong>13 t/ha para 20 t/ha</strong>.</p>
+                    
+                    <div class="bg-green-50 p-4 rounded-xl border border-green-100 mb-4">
+                        <h5 class="font-bold text-green-900 mb-2"><i class="fa-solid fa-users mr-2"></i> Ação Prática</h5>
+                        <p class="text-sm text-green-800">Mutirão de ATER focado em correção de solo (calagem: máx 1 t/ha de calcário) e técnicas de plantio de baixo custo (manivas sadias, corte correto).</p>
+                    </div>
+                    <div class="bg-slate-50 p-4 rounded-xl border border-slate-200">
+                        <h5 class="font-bold text-slate-900 mb-2"><i class="fa-solid fa-handshake mr-2"></i> Instrumento</h5>
+                        <p class="text-sm text-slate-700">Parceria com <strong>EMATER (SADA)</strong> e <strong>EMBRAPA Semiárido</strong>. Foco imediato nos 115 desamparados (especial atenção ao caju e mandioca).</p>
+                    </div>
+                </div>
+
+                <!-- Pilar 4 -->
+                <div class="bg-white rounded-3xl p-8 border border-slate-200 shadow-lg fade-up relative overflow-hidden group delay-100">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-amber-50 rounded-bl-full -z-10 transition-transform group-hover:scale-150"></div>
+                    <div class="flex items-center gap-4 mb-6">
+                        <div class="w-16 h-16 rounded-full bg-amber-500 text-white flex items-center justify-center text-2xl shadow-md shadow-amber-200">
+                            4
+                        </div>
+                        <h4 class="text-2xl font-bold text-slate-800">Estruturação de Mercado e Inclusão de Gênero</h4>
+                    </div>
+                    <p class="text-slate-600 mb-6">Combater o baixo preço (citado por 109 produtores) agregando valor ao produto liderado pelas 30 mulheres mapeadas na cultura da mandioca.</p>
+                    
+                    <div class="bg-amber-50 p-4 rounded-xl border border-amber-100 mb-4">
+                        <h5 class="font-bold text-amber-900 mb-2"><i class="fa-solid fa-star mr-2"></i> Ação Prática</h5>
+                        <p class="text-sm text-amber-800">Fomento ao cooperativismo feminino e certificação agroecológica.</p>
+                    </div>
+                    <div class="bg-slate-50 p-4 rounded-xl border border-slate-200">
+                        <h5 class="font-bold text-slate-900 mb-2"><i class="fa-solid fa-store mr-2"></i> Instrumento</h5>
+                        <p class="text-sm text-slate-700">Estruturação de <strong>"Casas de Farinha"</strong> comunitárias (Pronaf Agroindústria), geridas por cooperativas femininas. Vender ensacado com marca própria <strong>dobra o valor</strong> do produto final.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- CRONOGRAMA -->
+    <section class="py-24 bg-white">
+        <div class="container mx-auto px-6 max-w-5xl">
+            <div class="text-center mb-16 fade-up">
+                <h2 class="text-4xl font-bold text-slate-900 mb-4">Cronograma Macro (24 Meses)</h2>
+                <p class="text-slate-600 max-w-2xl mx-auto">Planejamento focado em desburocratizar a tecnologia no campo, sem depender de obras faraônicas, respeitando o clima.</p>
+            </div>
+
+            <div class="relative py-8">
+                <!-- Linha central -->
+                <div class="timeline-line"></div>
+
+                <!-- Fase 1 -->
+                <div class="relative flex flex-col md:flex-row items-center justify-between mb-12 w-full fade-up">
+                    <div class="order-2 md:order-1 md:w-5/12 w-full pl-12 md:pl-0 md:text-right mt-4 md:mt-0">
+                        <h4 class="text-xl font-bold text-gov-primary mb-2">Estruturação e Início</h4>
+                        <p class="text-slate-600">Elaboração dos ETPs, lançamento do PMI e edital de CPSI para startups. Início da construção das cisternas calçadão.</p>
+                    </div>
+                    <div class="absolute left-0 md:left-1/2 transform md:-translate-x-1/2 flex items-center justify-center w-8 h-8 rounded-full bg-gov-primary text-white border-4 border-white shadow shadow-gov-primary font-bold z-10">1</div>
+                    <div class="order-1 md:order-3 md:w-5/12 w-full pl-12 md:pl-8">
+                        <span class="inline-block bg-gov-primary text-white font-bold px-4 py-1 rounded-full text-sm">Meses 1 a 6</span>
+                    </div>
+                </div>
+
+                <!-- Fase 2 -->
+                <div class="relative flex flex-col md:flex-row items-center justify-between mb-12 w-full fade-up">
+                    <div class="order-1 md:w-5/12 w-full pl-12 md:pr-8 md:text-right">
+                        <span class="inline-block bg-purple-600 text-white font-bold px-4 py-1 rounded-full text-sm">Meses 7 a 12</span>
+                    </div>
+                    <div class="absolute left-0 md:left-1/2 transform md:-translate-x-1/2 flex items-center justify-center w-8 h-8 rounded-full bg-purple-600 text-white border-4 border-white shadow shadow-purple-600 font-bold z-10">2</div>
+                    <div class="order-2 md:order-3 md:w-5/12 w-full pl-12 md:pl-0 mt-4 md:mt-0">
+                        <h4 class="text-xl font-bold text-purple-700 mb-2">Choque Tecnológico</h4>
+                        <p class="text-slate-600">Mutirão de ATER (análise de solo, 1t/ha de calcário). Testes das soluções do CPSI (maquinário/pragas) nas propriedades.</p>
+                    </div>
+                </div>
+
+                <!-- Fase 3 -->
+                <div class="relative flex flex-col md:flex-row items-center justify-between mb-12 w-full fade-up">
+                    <div class="order-2 md:order-1 md:w-5/12 w-full pl-12 md:pl-0 md:text-right mt-4 md:mt-0">
+                        <h4 class="text-xl font-bold text-amber-600 mb-2">Empreendedorismo Feminino</h4>
+                        <p class="text-slate-600">Formação da cooperativa feminina da mandioca e implantação das agroindústrias de beneficiamento (Casas de Farinha).</p>
+                    </div>
+                    <div class="absolute left-0 md:left-1/2 transform md:-translate-x-1/2 flex items-center justify-center w-8 h-8 rounded-full bg-amber-500 text-white border-4 border-white shadow shadow-amber-500 font-bold z-10">3</div>
+                    <div class="order-1 md:order-3 md:w-5/12 w-full pl-12 md:pl-8">
+                        <span class="inline-block bg-amber-500 text-white font-bold px-4 py-1 rounded-full text-sm">Meses 13 a 18</span>
+                    </div>
+                </div>
+
+                <!-- Fase 4 -->
+                <div class="relative flex flex-col md:flex-row items-center justify-between w-full fade-up">
+                    <div class="order-1 md:w-5/12 w-full pl-12 md:pr-8 md:text-right">
+                        <span class="inline-block bg-green-600 text-white font-bold px-4 py-1 rounded-full text-sm">Meses 19 a 24</span>
+                    </div>
+                    <div class="absolute left-0 md:left-1/2 transform md:-translate-x-1/2 flex items-center justify-center w-8 h-8 rounded-full bg-green-600 text-white border-4 border-white shadow shadow-green-600 font-bold z-10">4</div>
+                    <div class="order-2 md:order-3 md:w-5/12 w-full pl-12 md:pl-0 mt-4 md:mt-0">
+                        <h4 class="text-xl font-bold text-green-700 mb-2">Resultados e Mercado</h4>
+                        <p class="text-slate-600">Primeira grande colheita com solo corrigido (salto p/ 20 t/ha). Comercialização conjunta dos produtos com alto valor agregado.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- VÍDEO & CAPACITAÇÃO -->
+    <section class="py-20 bg-slate-900 text-white">
+        <div class="container mx-auto px-6 max-w-4xl text-center fade-up">
+            <i class="fa-brands fa-youtube text-5xl text-red-500 mb-6"></i>
+            <h2 class="text-3xl font-bold mb-6">Capacitação Contínua</h2>
+            <p class="text-slate-400 mb-10">
+                Materiais audiovisuais, como o exemplo de manejo e corte de manivas abaixo, serão peças centrais no processo de Assistência Técnica para garantir a escalabilidade do conhecimento.
+            </p>
+            <div class="relative w-full overflow-hidden rounded-2xl shadow-2xl shadow-black border border-slate-700" style="padding-top: 56.25%;">
+                <!-- Transformado youtu.be para youtube.com/embed para funcionar no Iframe -->
+                <iframe class="absolute top-0 left-0 w-full h-full" 
+                        src="https://www.youtube.com/embed/LVCLvHN3cbU" 
+                        title="YouTube video player" 
+                        frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                        allowfullscreen>
+                </iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-gov-dark py-10 border-t border-emerald-800 text-center">
+        <div class="container mx-auto px-6 fade-up">
+            <h4 class="text-xl font-bold text-white mb-2">Diretoria de Inovação em Serviços Públicos do Piauí</h4>
+            <p class="text-emerald-400 font-medium mb-6">DISP/SEAD-PI</p>
+            <p class="text-slate-400 text-sm max-w-md mx-auto">
+                Este plano representa um compromisso com o desenvolvimento sustentável, o uso eficiente de recursos e a valorização do trabalhador rural de São José do Piauí.
+            </p>
+        </div>
+    </footer>
+
+    <!-- SCRIPT PARA ANIMAÇÃO NO SCROLL -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, {
+                threshold: 0.1, // Dispara quando 10% do elemento está visível
+                rootMargin: "0px 0px -50px 0px"
+            });
+
+            document.querySelectorAll('.fade-up').forEach((el) => {
+                observer.observe(el);
+            });
+        });
+    </script>
+</body>
+</html>
